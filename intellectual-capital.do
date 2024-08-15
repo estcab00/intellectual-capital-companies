@@ -1,7 +1,8 @@
 clear all
 set more off
-global dir "D:\Users\u_sociales\Documents\Esteban\Intelectual"
+global dir "C:/Users/estca/OneDrive/Documentos/Github/intellectual-capital"
 global data "$dir/data"
+global output "$dir/output"
 
 /*** 1. Import the file and prepare the data ***/ 
 import excel "$data/data.xlsx", firstrow
@@ -145,4 +146,10 @@ estimates store REG6
 
 ** 6.2 We compile all results into a table
 estimates table RE1A RE2A RE3A RE4A REG5 REG6,  ///
-  stats(N r2_o r2_b r2_w sigma_u sigma_e rho) b(%7.4f) star  
+  stats(N r2_o r2_b r2_w sigma_u sigma_e rho) b(%7.4f) star
+  
+esttab RE1A RE2A RE3A RE4A REG5 REG6 ///
+    using "$output/results.doc", replace ///
+    title("Regression Results") ///
+    stats(N r2_o r2_b r2_w sigma_u sigma_e rho) ///
+    b(%7.4f) star
