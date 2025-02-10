@@ -5,7 +5,7 @@ This repository contains the data and code to determine the effect of intellectu
 The repository is organized as follows:
 - `intellectual-capital.do`: This script contains the code for performing the econometric analysis.
 - 📊 data: This directory holds the datasets used in the analysis.
-- 🖼️ output: This directory contains the generated table.
+- 🖼️ results: This directory the tables with the results.
 
 ## 👨‍🏫 Author
 
